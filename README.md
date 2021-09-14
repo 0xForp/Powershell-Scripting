@@ -1,2 +1,1 @@
-# Powershell Scripting
- Powershell Scripting 
+# General Scripting
