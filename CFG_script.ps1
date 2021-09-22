@@ -1,9 +1,10 @@
+#Requires -RunAsAdministrator
+
 Write-Host ".....................Instalação do Sysmon........................."
 
 ########################### Sys Info ##############################
 
 Get-WmiObject -Class Win32_ComputerSystem
-#systeminfo testar
 
 #################### Checar se caminho existe,se n existir criar ####################
 
@@ -13,15 +14,15 @@ If(!(test-path $path))
       New-Item -ItemType Directory -Force -Path $path
       Write-Host "`nPasta C:\Temp criada pois não existia"
 }
-else 
+else
 {
     Write-Host "`nSalvando em C:\Temp"
 }
 
 ###################### DOWNLOAD DOS ARQUIVOS #######################
 
-wget https://download.sysinternals.com/files/Sysmon.zip -O C:\Temp\sysmon.zip #sysmon
-wget https://raw.githubusercontent.com/SwiftOnSecurity/sysmon-config/master/sysmonconfig-export.xml -O C:\Temp\sysmonconfig.xml #SwiftOnSecurity config para o Sysmon
+wget https://download.sysinternals.com/files/Sysmon.zip -O C:\Temp\sysmon.zip
+wget https://raw.githubusercontent.com/SwiftOnSecurity/sysmon-config/master/sysmonconfig-export.xml -O C:\Temp\sysmonconfig.xml
 
 
 Write-Host "Download ------------------ 25%"
@@ -57,4 +58,14 @@ else
     Write-Host "`n`n`OS 32 bits Detectado."
     Write-Host "`n`n`Script Finalizado,Sysmon Instalado com sucesso"
 }
+
+################################ ligando Windows Remote Management Service e executando a quickconfig ##########################
+
+ECHO Y | cmd /c "winrm quickconfig"
+
+################################ Ligando Windows Event Colector e pondo pra startar quando o windows for iniciado #####################
+
+ECHO S | cmd /c "wecutil qc"
+
+
 
