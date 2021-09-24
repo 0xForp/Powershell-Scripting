@@ -1,6 +1,6 @@
 # Powershell Scripting
 
-SysAdmin security focused scripts //// Scripts de SysAdmin com foco em segurança
+Scripts de SysAdmin com foco em segurança //// SysAdmin security focused scripts 
 
 
 CFG_script.ps1 :  
