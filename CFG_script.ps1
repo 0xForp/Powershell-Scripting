@@ -20,6 +20,7 @@ else
 }
 
 ###################### DOWNLOAD DOS ARQUIVOS #######################
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 # Linha para eliminar o error de SSL/TLS
 
 wget https://download.sysinternals.com/files/Sysmon.zip -O C:\Temp\sysmon.zip
 wget https://raw.githubusercontent.com/SwiftOnSecurity/sysmon-config/master/sysmonconfig-export.xml -O C:\Temp\sysmonconfig.xml
