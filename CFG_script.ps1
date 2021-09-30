@@ -25,7 +25,6 @@ else
 wget https://download.sysinternals.com/files/Sysmon.zip -O C:\Temp\sysmon.zip
 wget https://raw.githubusercontent.com/SwiftOnSecurity/sysmon-config/master/sysmonconfig-export.xml -O C:\Temp\sysmonconfig.xml
 
-
 ##################### Extrair aquivo zip (sysmon.zip) para a mesma pasta dos demais arquivos #################
 
 Expand-Archive -LiteralPath 'C:\Temp\sysmon.zip' -DestinationPath C:\Temp
