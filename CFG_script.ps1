@@ -29,7 +29,7 @@ wget https://raw.githubusercontent.com/SwiftOnSecurity/sysmon-config/master/sysm
 
 Expand-Archive -LiteralPath 'C:\Temp\sysmon.zip' -DestinationPath C:\Temp
 
-###################### Executar o arquivo sysmon com os parametros listados,if statement pra instalar com base no OS 34/64 #####################
+###################### Executar o arquivo sysmon com os parametros listados,if statement pra instalar com base no OS 32/64 #####################
 
 if ((Get-WmiObject win32_operatingsystem | select osarchitecture).osarchitecture -like "64*")
 {
